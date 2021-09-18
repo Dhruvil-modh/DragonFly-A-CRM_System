@@ -1,0 +1,338 @@
+<% var count=0; for(var i=0; i < users.length; i++) { %>
+    <% for(var j=0; j < users[i].job.length; j++) { %>
+        <% count = count+1; %>
+        <tr>
+
+            <td>
+                <%= i + 1 %>
+            </td>
+            <td>
+                <%= users[i].firm_Name %>
+            </td>
+            <td>
+                <%= j + 1 %>
+            </td>
+            <td>
+                <%= users[i].job[j].job_type %>
+            </td>
+            <td>
+                <%= users[i].job[j].App_recive %>
+            </td>
+            <td>
+                <b>
+                    <%= users[i].job[j].end_date %>
+                </b>
+            </td>
+            <td>
+                <b>
+                    <%= users[i].job[j].Priority %>
+                </b>
+            </td>
+            <td>
+                <%= users[i].job[j].Status %>
+
+
+                    <button class="btn btn-info "   onclick="myFunction2(<%=count%>)"  target="__blank">i</button>
+               
+            </td>
+
+
+            <td>
+                <div class="col-sm-12">
+                    <a class="btn btn-info " target="__blank" href="/firm_profile<%= users[i]._id%>#<%= users[i].job[j]._id%>">Task Details</a>
+                </div>
+            </td>
+        </tr>
+
+
+        <!-- <script>
+            //  var g = <%- JSON.stringify(users.length); %>
+            const g = <%= users[i].job.length; %>
+            const h = <%= count; %>
+                console.log("ejs variable :" + g);
+            function myFunction() {
+                var i;
+console.log("g : "+g);
+console.log("h : "+h);
+                for (i = 1; i <= g + 1; i++) {
+                    const x = document.getElementById("dataTable");
+                    const p = x.rows[i].cells[6].textContent.toString().trim();
+                    const q = p.toString();
+                    const y = "None";
+                    console.log(y);
+                    console.log(p);
+
+
+
+                    const d = new Date();
+                    console.log(d);
+                    console.log(d.getMonth() + 1);
+                    const o = d.getMonth() + 1
+                    const r = d.getFullYear().toString() + "-0" + o.toString() + "-" + d.getUTCDate().toString();
+                    const l = x.rows[i].cells[5].textContent.toString().trim();
+
+                    if (l >= r) {
+                        console.log("Date is same");
+                        document.getElementById("dataTable").rows[i].cells[5].style.color = "magenta";
+                    } else {
+                        console.log("Date is not same");
+                        document.getElementById("dataTable").rows[i].cells[5].style.color = "green";
+                    }
+
+
+
+                    console.log(`date : ${r}`);
+                    console.log(`hello ${p}`);
+                    console.log(`date2 : ${l}`);
+
+
+
+                    const stat = x.rows[i].cells[6].textContent.toString().trim();
+                    console.log("shujsu"+stat)
+
+                    if(stat === "Red")
+                    {
+                        document.getElementById("dataTable").rows[i].cells[6].style.color = "#d22f2f";
+                    }
+                    else if(stat === "Green")
+                    {
+                        document.getElementById("dataTable").rows[i].cells[6].style.color = "#658260";
+                    }
+                    else if(stat === "Blue")
+                    {
+                        document.getElementById("dataTable").rows[i].cells[6].style.color = "#6f3cd3";  
+                    }
+                    else
+                    {
+                        document.getElementById("dataTable").rows[i].cells[6].style.color = "#6f3cd3";
+                    }
+
+
+
+
+
+                    // if (p === "None") {
+
+                    //     document.getElementById("dataTable").rows[i].cells[6].style.color = "#658260";
+                    // }
+                    // else {
+                    //     document.getElementById("dataTable").rows[i].cells[6].style.color = "#6f3cd3";
+                    // }
+                }
+
+            }
+            console.log(<%=count %>);-->
+<script>
+            function myFunction2(c) {
+                const x = document.getElementById("dataTable");
+                const p = x.rows[c].cells[1].textContent.toString().trim();
+                const q = p.toString();
+
+
+                const job = x.rows[c].cells[3].textContent.toString().trim();
+
+
+
+                console.log("hej 65h464:" + c);
+                console.log("hej oijeoijo :" + p);
+                document.getElementById("form_firm_Name").value = q;
+                document.getElementById("Job_type").value = job;
+
+                //   document.getElementById("myForm").getElementById("first_name").value = "hello";
+
+                console.log("Date is not same");
+                document.getElementById("dataTable").rows[1].cells[4].style.color = "green";
+
+            }
+        </script> 
+
+        <% count=count+1 ;%>
+
+            <% } %>
+                <% } %>
+                    <div class="form-popup" id="myForm">
+                        <form action="/tasks" class="form-container" method="post">
+                            <h1>Update Status</h1>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="form3Example1">Status</label>
+                                    <select class='form-control' id='Sector' name='Status'>
+                                        <option>Doc Collection</option>
+                                        <option>Pending</option>
+                                        <option>Not Yet In</option>
+                                        <option>Online Submit</option>
+                                        <option>Draft</option>
+                                        <option>Allocated</option>
+                                        <option>Active</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="form3">Firm Name</label>
+                                    <input class='form-control' id='form_firm_Name' placeholder='Firm Name' type='text'name='Firm_name'>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="form3">job type</label>
+                                    <input class='form-control' id='Job_type' placeholder='Job_type' type='text'
+                                        name='Job_type'>
+                                </div>
+                            </div>
+                            <br>
+
+                            <center>
+                                <button type="submit" class="btn">Submit</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </center>
+                        </form>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <script>
+                        const g = <%=count/2%>;
+
+                            console.log("ejs variable :" + g);
+                        function myFunction() {
+                            var i;
+            console.log("g : "+g);
+                            for (i = 1; i <= g + 1; i++) {
+                                const x = document.getElementById("dataTable");
+                                const p = x.rows[i].cells[6].textContent.toString().trim();
+                                const q = p.toString();
+                                const y = "None";
+                                console.log(y);
+                                console.log(p);
+            
+            
+            
+                                const d = new Date();
+                                console.log(d);
+                                console.log(d.getMonth() + 1);
+                                const o = d.getMonth() + 1
+                                const r = d.getFullYear().toString() + "-0" + o.toString() + "-" + d.getUTCDate().toString();
+                                const l = x.rows[i].cells[5].textContent.toString().trim();
+            
+                                if (l >= r) {
+                                    console.log("Date is same");
+                                    document.getElementById("dataTable").rows[i].cells[5].style.color = "magenta";
+                                } else {
+                                    console.log("Date is not same");
+                                    document.getElementById("dataTable").rows[i].cells[5].style.color = "green";
+                                }
+            
+            
+            
+                                console.log(`date : ${r}`);
+                                console.log(`hello ${p}`);
+                                console.log(`date2 : ${l}`);
+            
+            
+            
+                                const stat = x.rows[i].cells[6].textContent.toString().trim();
+                                console.log("shujsu"+stat)
+            
+                                if(stat === "Red")
+                                {
+                                    document.getElementById("dataTable").rows[i].cells[6].style.color = "#d22f2f";
+                                }
+                                else if(stat === "Green")
+                                {
+                                    document.getElementById("dataTable").rows[i].cells[6].style.color = "#658260";
+                                }
+                                else if(stat === "Blue")
+                                {
+                                    document.getElementById("dataTable").rows[i].cells[6].style.color = "#33b7cc";  
+                                }
+                                else
+                                {
+                                    document.getElementById("dataTable").rows[i].cells[6].style.color = "#7963a5"; //#6f3cd3
+                                    //document.getElementById("dataTable").rows[i].cells[6].style.backgroundColor = "#7963a5";
+                                }
+            
+            
+            
+            
+            
+                                // if (p === "None") {
+            
+                                //     document.getElementById("dataTable").rows[i].cells[6].style.color = "#658260";
+                                // }
+                                // else {
+                                //     document.getElementById("dataTable").rows[i].cells[6].style.color = "#6f3cd3";
+                                // }
+                            }
+            
+                        }
+                        console.log(<%=count %>);
+            
+                        function myFunction2(c) {
+                            openForm();
+                           var v = (c/2)+0.5;
+                            console.log("hekkkdk   :"+g);
+                            console.log("hvount   :"+c);
+                            console.log("gount   :"+v);
+                            const x = document.getElementById("dataTable");
+                            console.log(x);
+                            console.log("track")
+                            const p = x.rows[v].cells[1].textContent.toString().trim();
+                            console.log(p);
+                            const q = p.toString();
+            
+            console.log(g);
+                            const job = x.rows[v].cells[3].textContent.toString().trim();
+            
+                            console.log("hej 65h464:" + g);
+                            console.log("hej oijeoijo :" + p);
+                            document.getElementById("form_firm_Name").value = q;
+                            document.getElementById("Job_type").value = job;
+            
+                            //   document.getElementById("myForm").getElementById("first_name").value = "hello";
+
+            
+                            }
+                      //  }
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <script>
+                        function openForm() {
+                            document.getElementById("myForm").style.display = "block";
+                        }
+
+                        function closeForm() {
+                            document.getElementById("myForm").style.display = "none";
+                        }
+                    </script>

@@ -1,0 +1,16 @@
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= users[i].firm_Name %></td>
+        <td><%= users[i].Con_person %></td>
+        <td><%= users[i].Con_PhNo %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].email %></td>
+        <td>
+            <div class="col-sm-12">
+                <a class="btn btn-info " target="__blank"
+                    href="/firm_profile<%= users[i]._id%>">Full Details</a>
+            </div>
+        </td>
+    </tr>
+    <% } %>

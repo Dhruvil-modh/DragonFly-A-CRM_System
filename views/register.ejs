@@ -1,0 +1,374 @@
+<!-- include header -->
+<%- include('include/_header') %>
+  <!-- /include header -->
+
+
+  <body>
+    <!-- partial:index.partial.html -->
+
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+      <!-- Navigation-->
+      <!-- include nav -->
+      <%- include('include/_nav') %>
+        <!-- /include nav -->
+        <div class="content-wrapper">
+          <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item active">Registration Page</li>
+            </ol>
+
+            <!-- Registration Form-->
+            <div class="card mb-3" style="
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px; ">
+              <div class="card-header" style="margin-top: 30px;">
+                <i class="fa fa-table"></i> Register Firm
+              </div>
+              <div class="card-body">
+
+
+
+                <form class='form-horizontal' role='form' action="/register" method="POST">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                  <!-- Email input -->
+
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Firm Name</label>
+                        <input class='form-control' id='first_name' placeholder='Firm Name' type='text'
+                          name='Firm_name'>
+
+                      </div>
+                    </div>
+
+
+                  
+                  
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Firm Type</label>
+                        <select class='form-control' id='Sector' name='Firm_type'>
+                          <option>Estate</option>
+                          <option>Incorporated Society</option>
+                          <option>Individual</option>
+                          <option>LLP</option>
+                          <option>Partnership Firm</option>
+                          <option>Proprietorship Firm</option>
+                          <option>Public limited company</option>
+                          <option>Private limited company</option>
+                          <option>Trust</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Client type</label>
+
+                        <select class='form-control' name='client_type'>
+                          <option>Client</option>
+                          <option>Prospect</option>
+                          <option>Lead</option>
+                          <option>Supplier</option>
+                          <option>Client & Supplier</option>
+                          <option>Prospect & Supplier</option>
+                          <option>Lead & Supplier </option>
+                          <option>Other</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Scheme/Sector</label>
+                        <select class='form-control' id='Sector' name='Scheme'>
+                          <option>None</option>
+                          <option>A-TUF</option>
+                          <option>CLCSS</option>
+                          <option>Electronics</option>
+                          <option>Environment Protection</option>
+                          <option>gujarat agro</option>
+                          <option>Public limited company</option>
+                          <option>Private limited company</option>
+                          <option>Trust</option>
+                          <option>Other</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Catagory</label>
+
+                        <select class='form-control' id='Sector' name='Catogary'>
+                          <option>None</option>
+                          <option>Diversification</option>
+                          <option>Expansion</option>
+                          <option>Modernization</option>
+                          <option>New</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Udhyog Aadhar Number</label>
+                        <input class='form-control' id='id_last_name' placeholder='Udhyog Aadhar Number' type='text'
+                          name='UA_Number'>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">PAN Number</label>
+                        <input class='form-control' id='id_adults' placeholder='PAN' type='text' name='PAN'>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Client GST Number</label>
+                        <input class='form-control' id='id_children_free' placeholder='Client GST Number' type='number'
+                          name='GST'>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Concerned Person</label>
+                        <input class='form-control' id='id_adults' placeholder='Concerned Person Name' type='text'
+                          name='Con_person'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Concerned Person Phone</label>
+                        <input class='form-control' id='id_children_free' placeholder='Ph. Number' type='number'
+                          name='Con_PhNo'>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Firm's Email ID</label>
+                        <input class='form-control' id='id_email' placeholder='E-mail' type='text' name='email'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Firm's Phone</label>
+                        <input class='form-control' id='id_phone' placeholder='Phone: 10 digit only' type='text'
+                          name='firm_PhNo'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Address</label>
+                        <input class='form-control' id='id_email' placeholder='Address' type='text' name='Address'>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">City/Town</label>
+                        <input class='form-control' id='id_email' placeholder='City/Town' type='text' name='City'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Pincode</label>
+                        <input class='form-control' id='id_phone' placeholder='Pincode' type='text' name='Pin'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">State</label>
+                        <select name="state" id="state" class="form-control" name='State'>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Andhra Pradesh">Andhra Pradesh</option>
+                          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                          <option value="Assam">Assam</option>
+                          <option value="Bihar">Bihar</option>
+                          <option value="Chandigarh">Chandigarh</option>
+                          <option value="Chhattisgarh">Chhattisgarh</option>
+                          <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                          <option value="Daman and Diu">Daman and Diu</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Lakshadweep">Lakshadweep</option>
+                          <option value="Puducherry">Puducherry</option>
+                          <option value="Goa">Goa</option>
+                          <option value="Haryana">Haryana</option>
+                          <option value="Himachal Pradesh">Himachal Pradesh</option>
+                          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                          <option value="Jharkhand">Jharkhand</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Kerala">Kerala</option>
+                          <option value="Madhya Pradesh">Madhya Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Manipur">Manipur</option>
+                          <option value="Meghalaya">Meghalaya</option>
+                          <option value="Mizoram">Mizoram</option>
+                          <option value="Nagaland">Nagaland</option>
+                          <option value="Odisha">Odisha</option>
+                          <option value="Punjab">Punjab</option>
+                          <option value="Rajasthan">Rajasthan</option>
+                          <option value="Sikkim">Sikkim</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Telangana">Telangana</option>
+                          <option value="Tripura">Tripura</option>
+                          <option value="Uttar Pradesh">Uttar Pradesh</option>
+                          <option value="Uttarakhand">Uttarakhand</option>
+                          <option value="West Bengal">West Bengal</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Country</label>
+                        <select name="state" id="Country" class="form-control" name='Country'>
+                          <option value="India">India</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fees in %</label>
+                        <input class='form-control' id='id_email' placeholder='%' type='text' name='Fees_in_per'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fees in Amount</label>
+                        <input class='form-control' id='id_phone' placeholder='' type='text' name='Fees'>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Comments</label>
+                        <textarea class='form-control' id='id_comments' placeholder='Additional comments'
+                          rows='3'></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <center>
+                    <!-- Submit button -->
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <button type="submit" type="button"class='btn-lg btn-primary'>Submit</button>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <button type="cancle" ahref="/register" class='btn-lg btn-danger'>cancle</button>
+                        </div>
+                      </div>
+                  </center>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- /.container-fluid-->
+          <!-- /.content-wrapper-->
+          <%- include('include/_footer') %>
+          <!-- Scroll to Top Button-->
+          <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+          </a>
+        </div>
+    </body>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js'></script>
+    <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.js'></script>
+    <script src="js/script.js"></script>
+
+  </body>
+
+  </html>

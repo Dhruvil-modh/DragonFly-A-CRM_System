@@ -1,0 +1,74 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+
+<body>
+<!-- partial:index.partial.html -->
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <!-- include nav -->
+<%- include('include/_nav') %>
+<!-- /include nav -->
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Icon Cards-->
+     
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Client No</th>
+                  <th>Firm Name</th>
+                  <th>Concerned Person</th>
+                  <th>Phone No</th>
+                  <th>Email</th>
+                  <th>Email</th>
+                  <th>Button</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%- include('include/_show') %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+      
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+  
+    <%- include('include/_footer') %>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+  </div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js'></script>
+<script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.js'></script><script  src="js/script.js"></script>
+
+</body>
+</html>

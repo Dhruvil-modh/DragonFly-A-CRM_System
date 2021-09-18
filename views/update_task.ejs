@@ -1,0 +1,867 @@
+<!-- fijiejf hdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdt-->
+
+<!-- include header -->
+<%- include('include/_header') %>
+  <!-- /include header -->
+
+
+  <body>
+    <!-- partial:index.partial.html -->
+
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+      <!-- Navigation-->
+      <!-- include nav -->
+      <%- include('include/_nav') %>
+        <!-- /include nav -->
+        <div class="content-wrapper">
+          <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item active">Update Task Page</li>
+            </ol>
+
+            <!-- Registration Form-->
+            <div class="card mb-3" style="
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px; ">
+              <div class="card-header" style="margin-top: 30px;">
+                <i class="fa fa-table"></i> Edit Task
+              </div>
+              <div class="card-body">
+
+
+                <form class='form-horizontal' role='form' action="/update_task" method="POST">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <input type="hidden" name="id" value="<%= user._id %>">
+                  <input type="hidden" name="job_id" value="<%= task._id %>">
+                  <!-- Email input -->
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1">Firm Name</label>
+                        <select class='form-control' id='Sector' name='Firm_name'>
+                          <option selected><%= user.firm_Name %></option>
+                        </select>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline" onclick="myFunction()">
+                        <label class='control-label' for='id_accomodation'>Job type</label>
+                        <select class='form-control' id='job_type' name='job_type'>
+                          <option>A-TUF</option>
+                          <option>Annual Accounts</option>
+                          <option>Bank Proposal</option>
+                          <option>Certification</option>
+                          <option>CGTMSE</option>
+                          <option>CLCSS/Tech UP</option>
+                          <option>Electric Duty</option>
+                          <option>ELECTRONICS</option>
+                          <option>ENVIRONMENT</option>
+                          <option selected="selected">General</option>
+                          <option>GST</option>
+                          <option>Guj Agro</option>
+                          <option>I 2 I</option>
+                          <option>I T</option>
+                          <option>Imported WIP</option>
+                          <option>Industrial park</option>
+                          <option>Inquiry</option>
+                          <option>INTEREST SUBSIDY</option>
+                          <option>ISO</option>
+                          <option>MDA</option>
+                          <option>NSIC</option>
+                          <option>PLASTIC</option>
+                          <option>Power Connection</option>
+                          <option>Pre Scrutiny</option>
+                          <option>Registration</option>
+                          <option>RENT</option>
+                          <option>SIA</option>
+                          <option>State Govt</option>
+                          <option>Subsidy Claim</option>
+                          <option>Textile Claim </option>
+                          <option>Tourism</option>
+                          <option>UDHYAM REG</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Scheme/Sector</label>
+                        <select class='form-control' id='Sector' name='Scheme'>
+                          <option>None</option>
+                          <option>A-TUF</option>
+                          <option>CLCSS</option>
+                          <option>Electronics</option>
+                          <option>Environment Protection</option>
+                          <option>Gujarat agro</option>
+                          <option>ISO</option>
+                          <option>IT</option>
+                          <option>Large Ind-2015</option>
+                          <option>M TUF</option>
+                          <option>MDA</option>
+                          <option>MOFPI</option>
+                          <option>MSME</option>
+                          <option>Nabard</option>
+                          <option>NSIC</option>
+                          <option>Plastic</option>
+                          <option>RENT</option>
+                          <option>RR-TUF</option>
+                          <option>SIA</option>
+                          <option>Textile</option>
+                          <option>UDHYAM</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example2">Ending date</label>
+                        <input type="date" id="form3Example2" class="form-control" name='edate' />
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Status</label>
+                        <select class='form-control' id='Sector' name='Status'>
+                          <option>Doc Collection</option>
+                          <option>Pending</option>
+                          <option>Not Yet In</option>
+                          <option>Online Submit</option>
+                          <option>Draft</option>
+                          <option>Allocated</option>
+                          <option>Active</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Priority</label>
+                        <select class='form-control' id='Sector' name='Priority'>
+                          <option>Normal</option>
+                          <option>Red</option>
+                          <option>Green</option>
+                          <option>Blue</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Catagory</label>
+
+                        <select class='form-control' id='Sector' name='Catogary'>
+                          <option>None</option>
+                          <option>Diversification</option>
+                          <option>Expansion</option>
+                          <option>Modernization</option>
+                          <option>New</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Application Recived </label>
+                        <input type="date" id="form3Example2" class="form-control" name='App_recive' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text'
+                          name='Fee_Aggreed'>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Responsible</label>
+
+                        <select class='form-control' id='Sector' name='Responsible'>
+                          <option>None</option>
+                          <option>BHUMI MODH</option>
+                          <option>Manish Modh</option>
+                          <option>Mansi Shah</option>
+                          <option>NISHIDH PRAJAPATI</option>
+                          <option>RUTVI SHAH</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <h4>Mendatory Field</h4>
+                        <hr>
+                      </div>
+
+
+                      <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class='control-label' for='id_accomodation'>Claim Amount Received </label>
+                            <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Clm_Amt_Rec'>
+
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class='control-label' for='id_accomodation'>Approved Claim Date</label>
+                            <input type="date" id="form3Example2" class="form-control" name='Apro_Clm_Date' />
+
+                          </div>
+                        </div>
+
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Date of Production</label>
+                            <input type="date" id="form3Example2" class="form-control" name='Production_Date' />
+                          </div>
+                        </div>
+
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Date of Application</label>
+                            <input type="date" id="form3Example2" class="form-control" name='App_Date' />
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                      <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Bank Name</label>
+                            <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Bank'>
+                          </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Bank Branch</label>
+                            <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Bank_Branch'>
+                          </div>
+                        </div>
+
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Concern District</label>
+                            <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='District'>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Loan sanction Amount/TL</label>
+                            <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Loan_San_Amt'>
+                          </div>
+                        </div>
+
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">Loan Sanction Date</label>
+                            <input type="date" id="form3Example2" class="form-control" name='Loan_San_Date' />
+                          </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form3">First Disbursement Date</label>
+                            <input type="date" id="form3Example2" class="form-control" name='First_Disb_Date' />
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                   </div>
+            </div>
+
+
+
+            <div class="card mb-3" id="myDIV">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <div class="mt-3">
+                    <h4>Dynamic Field(Subsidy Claim)</h4>
+                    <hr>
+                  </div>
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Subsidy Claim Start Date </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Sub_Cla_Start_Date' />
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Subsidy Claim End Date </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Sub_Cla_End_Date' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Self Made Party's E-mail Id</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Self_Email'>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Current Claim Status</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Claim_Status'>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Interest Subsidy Amount</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Interest_Subsidy_Amount'>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Capital Subsidy Amount</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Capital_Subsidy_Amount'>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Approved Claim No</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Approved_Claim_No'>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Approved Claim Period</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Approved_Claim_Period'>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row mb-4">
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Claim Submission Date </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Claim_Submission_Date' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Contact person</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Contact_person'>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Contact Number</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Contact_Number'>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Remarks & Followups</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Remarks'>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" id="myDIV2">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <div class="mt-3">
+                    <h4>Dynamic Field2(State Govt)</h4>
+                    <hr>
+                  </div>
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Issue Date </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Issue_Date' />
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Date of Subsidy sanction </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Subsidy_sanction_Date' />
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Date of Tex-1 Application</label>
+                        <input type="date" id="form3Example2" class="form-control" name='Tax1_Application_Date' />
+
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Date of Tex-2 </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Tex2_Date' />
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Eligible term loan Amount</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text'name='term_loan_Amount'>
+
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Subsidy period start date </label>
+                        <input type="date" id="form3Example2" class="form-control" name='Subsidy_period_start_date' />
+
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Subsidy Period End Date</label>
+                        <input type="date" id="form3Example2" class="form-control" name='Subsidy_Period_End_Date' />
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" id="myDIV3">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <div class="mt-3">
+                    <h4>Dynamic Field3(Electric Duty)</h4>
+                    <hr>
+                  </div>
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Application Recived </label>
+                        <input type="date" id="form3Example2" class="form-control" name='' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Responsible</label>
+
+                        <select class='form-control' id='Sector' name=''>
+                          <option>None</option>
+                          <option>BHUMI MODH</option>
+                          <option>Manish Modh</option>
+                          <option>Mansi Shah</option>
+                          <option>NISHIDH PRAJAPATI</option>
+                          <option>RUTVI SHAH</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Application Recived </label>
+                        <input type="date" id="form3Example2" class="form-control" name='' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Responsible</label>
+
+                        <select class='form-control' id='Sector' name=''>
+                          <option>None</option>
+                          <option>BHUMI MODH</option>
+                          <option>Manish Modh</option>
+                          <option>Mansi Shah</option>
+                          <option>NISHIDH PRAJAPATI</option>
+                          <option>RUTVI SHAH</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" id="myDIV4">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <div class="mt-3">
+                    <h4>Dynamic Field4(Pre Scrutiny)</h4>
+                    <hr>
+                  </div>
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Application Recived </label>
+                        <input type="date" id="form3Example2" class="form-control" name='' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Responsible</label>
+
+                        <select class='form-control' id='Sector' name=''>
+                          <option>None</option>
+                          <option>BHUMI MODH</option>
+                          <option>Manish Modh</option>
+                          <option>Mansi Shah</option>
+                          <option>NISHIDH PRAJAPATI</option>
+                          <option>RUTVI SHAH</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Application Recived </label>
+                        <input type="date" id="form3Example2" class="form-control" name='' />
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3">Fee Aggreed</label>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name=''>
+                      </div>
+                    </div>
+
+
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class='control-label' for='id_accomodation'>Responsible</label>
+
+                        <select class='form-control' id='Sector' name=''>
+                          <option>None</option>
+                          <option>BHUMI MODH</option>
+                          <option>Manish Modh</option>
+                          <option>Mansi Shah</option>
+                          <option>NISHIDH PRAJAPATI</option>
+                          <option>RUTVI SHAH</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+            <center>
+              <!-- Submit button -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <button type="submit" class='btn-lg btn-primary'>Submit</button>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <button type="button" ahref="/" class='btn-lg btn-danger'>cancle</button>
+                  </div>
+                </div>
+            </center>
+            </form>
+          </div>
+        </div>
+        </div>
+
+
+
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <%- include('include/_footer') %>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+    </body>
+    <!-- partial -->
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myDIV");
+        var a = document.getElementById("myDIV2");
+        var b = document.getElementById("myDIV3");
+        var c = document.getElementById("myDIV4");
+        var y = document.getElementById("job_type").value;
+        console.log(`hello ${y}`)
+        if (y === "Subsidy Claim") {
+          x.style.display = "block";
+          console.log("if 1")
+          a.style.display = "none";
+          b.style.display = "none";
+          c.style.display = "none";
+        }
+        else if (y === "State Govt") {
+          a.style.display = "block";
+          console.log("if 2")
+          x.style.display = "none";
+
+          b.style.display = "none";
+          c.style.display = "none";
+        }
+        else if (y === "Electric Duty") {
+          b.style.display = "block";
+          console.log("if 3")
+          x.style.display = "none";
+          a.style.display = "none";
+
+          c.style.display = "none";
+        }
+        else if (y === "Pre Scrutiny") {
+          c.style.display = "block";
+          console.log("if 4")
+          x.style.display = "none";
+          a.style.display = "none";
+          b.style.display = "none";
+
+        }
+        else {
+          x.style.display = "none";
+          a.style.display = "none";
+          b.style.display = "none";
+          c.style.display = "none";
+          console.log("else")
+        }
+      }
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js'></script>
+    <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.js'></script>
+    <script src="js/script.js"></script>
+
+  </body>
+
+  </html>
