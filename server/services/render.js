@@ -1,9 +1,12 @@
 const axios = require('axios');
+const dotenv = require('dotenv');
 
+
+const PORT = process.env.PORT || 8080;
 
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
             res.render('index', { users : response.data });
         })
@@ -16,7 +19,7 @@ exports.homeRoutes = (req, res) => {
 
 exports.homeRoutes_firmdd = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
             res.render('addjob', { users : response.data });
         })
@@ -30,7 +33,7 @@ exports.homeRoutes_firmdd = (req, res) => {
 
 exports.homeRoutes_tasks = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
             res.render('tasks', { users : response.data });
         })
@@ -61,7 +64,7 @@ exports.logout = (req, res) =>{
 
 exports.firm_profile = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
             const id = req.params.id;
             console.log(`id is : ${id}`);
@@ -86,7 +89,7 @@ exports.firm_profile = (req, res) => {
 
 
 exports.addjob = (req, res) =>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get(`http://localhost:${PORT}/api/users`, { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("addjob", { user : userdata.data})
         })
@@ -97,7 +100,7 @@ exports.addjob = (req, res) =>{
 
 
 exports.update_firm = (req, res) =>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get(`http://localhost:${PORT}/api/users`, { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("update_firm", { user : userdata.data})
         })
@@ -109,7 +112,7 @@ exports.update_firm = (req, res) =>{
 
 
 exports.update_task = (req, res) =>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get(`http://localhost:${PORT}/api/users`, { params : { id : req.query.id }})
         .then(function(userdata){
 
             for(var i = 0; i<=5 ;i++)
