@@ -54,7 +54,7 @@
 
                     <div class="col">
                       <div class="form-outline" onclick="myFunction()">
-                        <label class='control-label' for='id_accomodation'>Job type</label>
+                        <label class='control-label' for='id_accomodation'>Job type (Scheme/Sector)</label>
                         <select class='form-control' id='job_type' name='job_type'>
                           <option>A-TUF</option>
                           <option>Annual Accounts</option>
@@ -93,7 +93,7 @@
                     </div>
 
 
-                    <div class="col">
+                    <!-- <div class="col">
                       <div class="form-outline">
                         <label class='control-label' for='id_accomodation'>Scheme/Sector</label>
                         <select class='form-control' id='Sector' name='Scheme'>
@@ -120,13 +120,13 @@
                           <option>UDHYAM</option>
                         </select>
                       </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form3Example2">Ending date</label>
-                        <input type="date" id="form3Example2" class="form-control" name='edate' />
+                        <input type="date" id="form3Example2" class="form-control" name='edate' required >
                       </div>
                     </div>
                   </div>
@@ -204,8 +204,7 @@
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form3">Fee Aggreed</label>
-                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text'
-                          name='Fee_Aggreed'>
+                        <input class='form-control' id='id_first_name' placeholder='Fees' type='text' name='Fee_Aggreed' required>
 
                       </div>
                     </div>

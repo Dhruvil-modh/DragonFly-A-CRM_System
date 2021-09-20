@@ -41,6 +41,8 @@ exports.create = (req, res) => {
     firm_PhNo: req.body.firm_PhNo,
     Fees_in_per: req.body.Fees_in_per,
     Fees: req.body.Fees,
+    IFP_email : req.body.IFP_email,
+    IFP_pw : req.body.IFP_pw,
     job: undefined,
   });
 
@@ -234,6 +236,8 @@ exports.update_firm = (req, res) => {
         firm_PhNo: req.body.firm_PhNo,
         Fees_in_per: req.body.Fees_in_per,
         Fees: req.body.Fees,
+        IFP_email : req.body.IFP_email,
+        IFP_pw : req.body.IFP_pw
       },
     }
   )

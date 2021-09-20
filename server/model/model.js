@@ -58,6 +58,12 @@ var schema = new mongoose.Schema({
     Fees : {
         type : String
     },
+    IFP_email : {
+        type : String
+    },
+    IFP_pw : {
+        type : String
+    },
 
     job : [{Firm_name : String,
          job_type : String , 
