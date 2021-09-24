@@ -169,34 +169,41 @@
 
 
 
-            <!-- Dom trial -->
             <div class="card mb-3" id="myDIV">
               <div class="card-header">
                 <i class="fa fa-table"></i> Toggle trial
               </div>
               <div class="card-body">
                 <div class="table-responsive">
+
                   <table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th>Client No</th>
                         <th>Firm Name</th>
-                        <th>Concerned Person</th>
+                        <th>Status</th>
                         <th>Phone No</th>
                         <th>Email</th>
                         <th>Total tasks</th>
                         <th>Button</th>
                       </tr>
                     </thead>
+                    <% for(var i=0; i < users.length; i++) { %>
+                      <% for(var j=0; j < users[i].job.length; j++) { %>
                     <tbody>
-
+                      <th> Task (<%= j+1%>) <%= users[i].job[j].job_type %></th>
+                      <th> firm no (<%= i+1%>) <%= users[i].firm_Name %></th>
+                      <th> <%= users[i].job[j].Status %></th>
                     </tbody>
+                    <%}%>
+                    <%}%>
+        
                   </table>
+
                 </div>
               </div>
               <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
             </div>
-
 
 
 

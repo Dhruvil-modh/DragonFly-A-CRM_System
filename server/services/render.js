@@ -115,12 +115,11 @@ exports.update_task = (req, res) =>{
     axios.get(`http://localhost:${PORT}/api/users`, { params : { id : req.query.id }})
         .then(function(userdata){
 
-            for(var i = 0; i<=5 ;i++)
+            for(var i = 0; i<=userdata.data.job.length ;i++)
             {
                 var x = userdata.data.job[i]._id;
-                
                 if(x === req.query.job_id)
-                { res.render("update_task", { task : userdata.data.job[i] , user : userdata.data})
+                { res.render("update_task", { task : userdata.data.job[i], index_no : i , user : userdata.data})
                     console.log(i);
                     console.log(userdata.data.job[i])
                     break;

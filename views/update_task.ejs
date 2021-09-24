@@ -1,5 +1,3 @@
-<!-- fijiejf hdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdt-->
-
 <!-- include header -->
 <%- include('include/_header') %>
   <!-- /include header -->
@@ -35,12 +33,13 @@
               </div>
               <div class="card-body">
 
-
                 <form class='form-horizontal' role='form' action="/update_task" method="POST">
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   <input type="hidden" name="id" value="<%= user._id %>">
                   <input type="hidden" name="job_id" value="<%= task._id %>">
                   <!-- Email input -->
+                  <%= task._id %>
+                hello  <%=index_no%>
                   <div class="row mb-4">
                     <div class="col">
                       <div class="form-outline">
@@ -57,7 +56,7 @@
                     <div class="col">
                       <div class="form-outline" onclick="myFunction()">
                         <label class='control-label' for='id_accomodation'>Job type</label>
-                        <select class='form-control' id='job_type' name='job_type'>
+                        <select class='form-control' id='job_type' name='job_type' value="<%= user.job_type%>">
                           <option>A-TUF</option>
                           <option>Annual Accounts</option>
                           <option>Bank Proposal</option>
@@ -67,7 +66,7 @@
                           <option>Electric Duty</option>
                           <option>ELECTRONICS</option>
                           <option>ENVIRONMENT</option>
-                          <option selected="selected">General</option>
+                          <option>General</option>
                           <option>GST</option>
                           <option>Guj Agro</option>
                           <option>I 2 I</option>
@@ -90,6 +89,7 @@
                           <option>Textile Claim </option>
                           <option>Tourism</option>
                           <option>UDHYAM REG</option>
+                          <option selected="selected"><%= user.job[index_no].job_type%></option>
                         </select>
                       </div>
                     </div>
@@ -120,15 +120,15 @@
                           <option>SIA</option>
                           <option>Textile</option>
                           <option>UDHYAM</option>
+                          <option selected="selected"><%= user.job[index_no].Scheme%></option>
                         </select>
                       </div>
                     </div>
 
-
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form3Example2">Ending date</label>
-                        <input type="date" id="form3Example2" class="form-control" name='edate' />
+                        <input type="date" id="form3Example2" class="form-control" name='edate' value="<%= user.job[index_no].end_date%>"/>
                       </div>
                     </div>
                   </div>
@@ -147,6 +147,7 @@
                           <option>Allocated</option>
                           <option>Active</option>
                           <option>Approved</option>
+                          <option selected="selected"><%= user.job[index_no].Status%></option>
                         </select>
 
                       </div>
@@ -162,6 +163,7 @@
                           <option>Red</option>
                           <option>Green</option>
                           <option>Blue</option>
+                          <option selected="selected"><%= user.job[index_no].Priority%></option>
                         </select>
 
                       </div>
@@ -180,6 +182,7 @@
                           <option>Expansion</option>
                           <option>Modernization</option>
                           <option>New</option>
+                          <option selected="selected"><%= user.job[index_no].Catagory%></option>
                         </select>
 
                       </div>
@@ -793,8 +796,6 @@
           </div>
         </div>
         </div>
-
-
 
         <!-- /.container-fluid-->
         <!-- /.content-wrapper-->

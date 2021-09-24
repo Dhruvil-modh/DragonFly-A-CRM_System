@@ -230,7 +230,7 @@ console.log("h : "+h);
                                 const o = d.getMonth() + 1
                                 const r = d.getFullYear().toString() + "-0" + o.toString() + "-" + d.getUTCDate().toString();
                                 const l = x.rows[i].cells[5].textContent.toString().trim();
-            console.log("l :"+r);
+            console.log("l"+l);
                                 if (l >= r) {
                                     console.log("Date is same");
                                     document.getElementById("dataTable").rows[i].cells[5].style.color = "magenta";
